@@ -1,9 +1,22 @@
 import React from 'react';
 import { Grid, Container } from '@mui/material';
 import InfoCard from './InfoCard';
+import { AppBar, Toolbar, Typography, Link} from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
+
 
 const App = () => {
   return (
+    <>
+    <AppBar position="sticky">
+        <Toolbar sx={{ gap: '1em' }}>
+            <Typography component="h1" variant="h6">
+            Dashboard
+            </Typography>
+            <Link component={RouterLink} color="inherit" to="/">Main page</Link>
+            <Link component={RouterLink} color="inherit" to="/movielistpage">Movie table</Link>
+        </Toolbar>
+        </AppBar>
     <Container>
       <Grid container spacing={2}>
         {/* Original Cards */}
@@ -59,6 +72,7 @@ const App = () => {
         </Grid>
       </Grid>
     </Container>
+    </>
   );
 };
 
